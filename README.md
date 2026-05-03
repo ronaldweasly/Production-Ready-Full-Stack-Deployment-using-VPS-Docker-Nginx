@@ -1,45 +1,44 @@
 # 🚀 Production-Ready Full Stack Deployment using VPS, Docker & Nginx
 
+---
+
 ## 📌 Overview
 
-This project demonstrates deploying a full-stack web application on a cloud VPS using a containerized architecture. It showcases real-world DevOps practices including reverse proxy configuration, multi-service orchestration, and system monitoring.
+This project demonstrates deploying a full-stack web application on a cloud VPS using a containerized architecture. It showcases real-world DevOps practices including reverse proxy configuration, multi-service orchestration, and monitoring.
 
-The system consists of:
+---
 
-* Frontend (static website)
-* Backend (Node.js API)
-* Reverse Proxy using Nginx
-* Containerization using Docker
-* Monitoring using Prometheus & Grafana
+## 🔥 Live Demo
+
+* Frontend: http://35.154.60.98
+* API: http://35.154.60.98/api
+* Grafana: http://35.154.60.98/grafana
+* Prometheus: http://35.154.60.98/prometheus
 
 ---
 
 ## 🧱 Architecture
 
-```
+![Architecture](screenshots/architecture.png)
+
+```text
 User → Nginx → Frontend (Docker)
               → Backend API (Docker)
-              → Monitoring (Grafana / Prometheus)
+              → Grafana (Docker)
+              → Prometheus (Docker)
 ```
-
-* Nginx routes:
-
-  * `/` → frontend
-  * `/api` → backend
-  * `/grafana` → Grafana dashboard
-  * `/prometheus` → Prometheus UI
 
 ---
 
 ## ⚙️ Tech Stack
 
-* VPS (Cloud Server)
+* VPS (AWS EC2)
 * Docker & Docker Compose
-* Nginx
-* Node.js (Backend)
+* Nginx (Reverse Proxy)
+* Node.js (Backend API)
 * HTML/CSS (Frontend)
-* Prometheus
-* Grafana
+* Prometheus (Monitoring)
+* Grafana (Visualization)
 
 ---
 
@@ -49,7 +48,7 @@ User → Nginx → Frontend (Docker)
 * Reverse proxy routing using Nginx
 * Multi-container orchestration using Docker Compose
 * Centralized access via single entry point (port 80)
-* Monitoring dashboards for system metrics
+* Monitoring dashboards using Prometheus & Grafana
 * Real-world debugging of:
 
   * Disk space issues
@@ -63,15 +62,14 @@ User → Nginx → Frontend (Docker)
 ```
 /project
  ├── frontend/
- │   ├── index.html
- │   ├── style.css
- │   └── Dockerfile
- │
  ├── backend/
- │   ├── server.js
- │   ├── package.json
- │   └── Dockerfile
- │
+ ├── screenshots/
+ │    ├── architecture.png
+ │    ├── frontend.png
+ │    ├── api.png
+ │    ├── docker.png
+ │    ├── grafana.png
+ │    └── prometheus.png
  ├── docker-compose.yml
  └── README.md
 ```
@@ -87,25 +85,17 @@ git clone <your-repo-link>
 cd project
 ```
 
----
-
 ### 2. Run Containers
 
 ```bash
 docker compose up -d --build
 ```
 
----
-
 ### 3. Configure Nginx
-
-Edit:
 
 ```bash
 nano /etc/nginx/sites-available/default
 ```
-
-Add:
 
 ```nginx
 server {
@@ -129,8 +119,6 @@ server {
 }
 ```
 
-Restart:
-
 ```bash
 systemctl restart nginx
 ```
@@ -150,23 +138,34 @@ systemctl restart nginx
 
 ## 📸 Screenshots
 
-*Add these:*
+### 🖥️ Frontend
 
-* Running containers (`docker ps`)
-* Frontend UI
-* API response
-* Grafana dashboard
-* Prometheus UI
+![Frontend](screenshots/frontend.png)
+
+### 🔌 API Response
+
+![API](screenshots/api.png)
+
+### 🐳 Docker Containers
+
+![Docker](screenshots/docker.png)
+
+### 📊 Grafana Dashboard
+
+![Grafana](screenshots/grafana.png)
+
+### 📈 Prometheus Metrics
+
+![Prometheus](screenshots/prometheus.png)
 
 ---
 
-## 🧠 Key Learnings
+## 🧠 Key Engineering Decisions
 
-* How to deploy applications on a VPS
-* Reverse proxy configuration using Nginx
-* Docker-based microservice architecture
-* Debugging real-world deployment issues
-* Resource optimization and system stability
+* Used Docker to isolate services
+* Used Nginx as a single entry point instead of exposing multiple ports
+* Chose VPS for full infrastructure control
+* Optimized system due to limited server resources
 
 ---
 
@@ -174,8 +173,8 @@ systemctl restart nginx
 
 * Disk space limitations on VPS
 * Port conflicts during deployment
-* Networking between containers and host
-* Service downtime and debugging
+* Docker networking issues
+* Service downtime debugging
 
 ---
 
@@ -183,7 +182,7 @@ systemctl restart nginx
 
 * Add HTTPS using Let's Encrypt
 * Implement CI/CD using GitHub Actions
-* Deploy using Kubernetes for scalability
+* Deploy with Kubernetes
 * Add authentication & database
 
 ---
@@ -193,5 +192,3 @@ systemctl restart nginx
 Himanshu
 Engineering Student (AI & Data Science)
 Focused on DevOps, Cloud & Scalable Systems
-
----
