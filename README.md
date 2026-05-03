@@ -19,7 +19,7 @@ This project demonstrates deploying a full-stack web application on a cloud VPS 
 
 ## 🧱 Architecture
 
-![Architecture](screenshots/architecture.png)
+![Architecture](screenshots/ChatGPT%20Image%20May%204,%202026,%2012_22_53%20AM.png)
 
 ```text
 User → Nginx → Frontend (Docker)
