@@ -8,7 +8,7 @@ This project demonstrates deploying a full-stack web application on a cloud VPS 
 
 ---
 
-## 🔥 Live Demo
+## 🔥 Live Demo -- INSTANCE CAN BE OFFLINE
 
 * Frontend: http://35.154.60.98
 * API: http://35.154.60.98/api
