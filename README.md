@@ -138,25 +138,20 @@ systemctl restart nginx
 
 ## 📸 Screenshots
 
-### 🖥️ Frontend
+### 🧱 Architecture
+![Architecture](screenshots/ChatGPT%20Image%20May%204,%202026,%2012_22_53%20AM.png)
 
-![Frontend](screenshots/frontend.png)
+### 🖥️ Frontend
+![Frontend](screenshots/Screenshot%202026-05-04%20001155.png)
 
 ### 🔌 API Response
-
-![API](screenshots/api.png)
+![API](screenshots/Screenshot%202026-05-04%20001321.png)
 
 ### 🐳 Docker Containers
-
-![Docker](screenshots/docker.png)
+![Docker](screenshots/Screenshot%202026-05-04%20001241.png)
 
 ### 📊 Grafana Dashboard
-
-![Grafana](screenshots/grafana.png)
-
-### 📈 Prometheus Metrics
-
-![Prometheus](screenshots/prometheus.png)
+![Grafana](screenshots/Screenshot%202026-05-04%20001400.png)
 
 ---
 
